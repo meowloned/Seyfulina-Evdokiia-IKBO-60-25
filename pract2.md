@@ -234,7 +234,7 @@ Finished in 103msec.
 ```
 
 
-# #Задание 5
+## Задание 5
 ```
 set of int: menu_vers = {10, 11, 12, 13, 14, 15};
 set of int: dropdown_vers = {18, 20, 21, 22, 23};
