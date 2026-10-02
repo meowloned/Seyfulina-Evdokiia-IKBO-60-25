@@ -1,6 +1,7 @@
-#Практическая 2
 
-##Задание 1
+# Практическая 2
+
+## Задание 1
 ```
 bash-3.2$ python3 --version
 Python 3.13.3
@@ -48,12 +49,82 @@ Requires-Python: >=3.11
 git clone https://github.com/matplotlib/matplotlib.git
 ```
 
-##Задание 2
+## Задание 2
 ```
+bash-3.2$ node --version
+v24.21.0
+bash-3.2$ npm --version
+11.19.0
+bash-3.2$ mkdir express-practice
+bash-3.2$ cd express-practice
+bash-3.2$ npm init -y
+Wrote to /Users/meowloned/express-practice/package.json:
+
+{
+  "name": "express-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+
+bash-3.2$ npm install express
+bash-3.2$ cat node_modules/express/package.json
+{
+  "name": "express",
+  "description": "Fast, unopinionated, minimalist web framework",
+  "version": "5.2.1",
+  ...
+  "dependencies": {
+    "accepts": "^2.0.0",
+    "body-parser": "^2.2.1",
+    "content-disposition": "^1.0.0",
+    "content-type": "^1.0.5",
+    "cookie": "^0.7.1",
+    "cookie-signature": "^1.2.1",
+    "debug": "^4.4.0",
+    "depd": "^2.0.0",
+    "encodeurl": "^2.0.0",
+    "escape-html": "^1.0.3",
+    "etag": "^1.8.1",
+    "finalhandler": "^2.1.0",
+    "fresh": "^2.0.0",
+    "http-errors": "^2.0.0",
+    "merge-descriptors": "^2.0.0",
+    "mime-types": "^3.0.0",
+    "on-finished": "^2.4.1",
+    "once": "^1.4.0",
+    "parseurl": "^1.3.3",
+    "proxy-addr": "^2.0.7",
+    "qs": "^6.14.0",
+    "range-parser": "^1.2.1",
+    "router": "^2.2.0",
+    "send": "^1.1.0",
+    "serve-static": "^2.2.0",
+    "statuses": "^2.0.1",
+    "type-is": "^2.0.1",
+    "vary": "^1.1.2"
+  },
+  ...
+  "engines": {
+    "node": ">= 18"
+  },
+...
 
 ```
+Как получить пакет без менеджера пакетов, прямо из репозитория?
+```
+git clone https://github.com/expressjs/express.git
+```
 
-##Задание 2
+## Задание 3
 ```
 
 ```
