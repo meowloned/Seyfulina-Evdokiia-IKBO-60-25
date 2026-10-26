@@ -1,0 +1,5 @@
+ls
+cd "My Docs"
+hello
+ls a b
+ls
