@@ -3,6 +3,7 @@ import tkinter as tk
 import argparse
 from pathlib import Path
 from logger import log_command
+from vfs import load_vfs, calculate_vfs_hash
 
 
 arg_parser = argparse.ArgumentParser(
@@ -27,6 +28,22 @@ root.geometry("800x500")
 output = tk.Text(root, state="disabled")
 output.pack(fill="both", expand=True, padx=10, pady=10)
 
+vfs_data = None
+
+if config.vfs:
+    try:
+        vfs_data = load_vfs(config.vfs)
+        message = f"VFS загружена: {vfs_name}"
+        message += f" ({len(vfs_data)} элементов)"
+
+    except (OSError, ValueError) as error:
+        message = f"Ошибка загрузки VFS: {error}"
+
+    output.config(state="normal")
+    output.insert(tk.END, message + "\n")
+    output.config(state="disabled")
+
+
 command_entry = tk.Entry(root)
 command_entry.pack(fill="x", padx=10, pady=10)
 
@@ -48,6 +65,20 @@ def execute_command(command_line):
         if args:
             return "exit не принимает аргументы", False
         return "", True
+
+    if command == "vfs-info":
+        if args:
+            return "vfs-info не принимает аргументы", False
+
+        if vfs_data is None:
+            return "VFS не загружена", False
+
+        output.insert(tk.END, f"Имя VFS: {vfs_name}\n")
+        output.insert(
+            tk.END,
+            f"SHA-256: {calculate_vfs_hash(vfs_data)}\n"
+        )
+        return "", False
 
     return f"неизвестная команда {command}", False
 
